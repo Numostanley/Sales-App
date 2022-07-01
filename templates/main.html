@@ -1,0 +1,36 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script src="https://kit.fontawesome.com/99e9ae008a.js" crossorigin="anonymous"></script>
+
+    <title>Sales-App</title>
+  </head>
+  <body>
+
+      {% include 'nav.html' %}
+
+      {% if messages %}
+      <ul class="messages">
+          {% for message in messages %}
+          <div class="toast toast--visible">{{ message }}</div>
+          <!-- <li>{{ message }}</li> -->
+          {% endfor %}
+      </ul>
+      {% endif %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    <script src="{% static 'javascript/app.js' %}"></script>
+  </body>
+</html>
